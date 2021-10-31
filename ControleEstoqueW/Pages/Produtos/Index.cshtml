@@ -1,0 +1,30 @@
+﻿@page
+@model ControleEstoqueW.Pages.Produtos.IndexModel
+@{ }
+
+<div class="container">
+    <h1 class="text-center">
+        Lista de Produtos
+        <a class="btn btn-outline-primary align-content-end" asp-area="" asp-page="/Produtos/Create">Criar</a>
+    </h1>
+    <section class="d-flex">
+        @foreach (var data in Model.Produtos)
+        {
+<div class="pokemon-picture">
+    <img src="@Html.DisplayFor(modelItem => data.Imagem)"
+         alt="Imagem do @Html.DisplayFor(modelItem => data.Descricao)" />
+</div>
+                <div class="pokemon-info">
+                    <h2>Id: @Html.DisplayFor(modelItem => data.ID)</h2>
+                    <h3>Status: @Html.DisplayFor(modelItem => data.Status)</h3>
+                    <h3>Descrição: @Html.DisplayFor(modelItem => data.Descricao)</h3>
+                    <h3>Categoria: @Html.DisplayFor(modelItem => data.Categoria)</h3>
+                    <h3>Quantidade: @Html.DisplayFor(modelItem => data.Quantidade)</h3>
+                    <h3>Custo: @Html.DisplayFor(modelItem => data.Custo)</h3>
+                    <h3>Imagem: @Html.DisplayFor(modelItem => data.Imagem)</h3>
+                </div>
+                                <a class="btn btn-info"
+                                   asp-page="/Produtos/Detail"
+                                   asp-route-id="@data.ID">Detalhes</a>}
+    </section>
+</div>

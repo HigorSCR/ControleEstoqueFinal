@@ -1,0 +1,17 @@
+﻿@page
+@model ControleEstoqueW.Pages.Produtos.DeleteModel
+@{ }
+<div class="row text-center">
+    <h1>
+        Confirmação de exlcusão
+    </h1>
+</div>
+<div class="row">
+    <h3>
+        Você deseja realmente desativar o produto @Html.DisplayFor(model => model.Produto.Descricao)?
+    </h3>
+</div>
+<form method="post">
+    <input type="hidden" asp-for="Produto.ID" />
+    <input type="submit" value="Deletar" class="btn btn-danger" />
+</form>
