@@ -11,7 +11,34 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Pages\Operacoes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\001 - Regata esportiva - Cinza - P.PNG" />
+    <None Include="wwwroot\Images\002 - Camisa tradicional estampada folhagem - azul marinho - M.PNG" />
+    <None Include="wwwroot\Images\003 - Camiseta infantil toy story woody manga curta - 2 anos.PNG" />
+    <None Include="wwwroot\Images\004 - Calça wide leg jeans - Azul - Tam 40.PNG" />
+    <None Include="wwwroot\Images\005 - vestido midi de algodão com recortes cut - Pink - M.PNG" />
+    <None Include="wwwroot\Images\006 - blusa cropped estampada de poá e limões - Off white - pp.PNG" />
+    <None Include="wwwroot\Images\007 - top cropped corset canelado gola alta - Off white - G.PNG" />
+    <None Include="wwwroot\Images\008 - regata cropped alça com babados canelada - Preto - M.PNG" />
+    <None Include="wwwroot\Images\009 - regata cropped  - Pink - PP.PNG" />
+    <None Include="wwwroot\Images\010 - blazer feminino listrado - Preto - GG.PNG" />
+    <None Include="wwwroot\Images\011 - blazer feminino básico acinturado - Preto - M.PNG" />
+    <None Include="wwwroot\Images\012 - blazer feminino acinturado com bolsos - Vermelho - M.PNG" />
+    <None Include="wwwroot\Images\013 - saia feminina midi canelada - Preta - G.PNG" />
+    <None Include="wwwroot\Images\014 - camiseta masculina básica manga curta - Preta - M.PNG" />
+    <None Include="wwwroot\Images\015 - camiseta masculina estampada manga curta - Azul marinho - G.PNG" />
+    <None Include="wwwroot\Images\016 - camiseta masculina controles de playstation - Preta - M.PNG" />
+    <None Include="wwwroot\Images\017 - camiseta masculina manga curta gola careca astronauta - Preta - P.PNG" />
+    <None Include="wwwroot\Images\018 - salopete bebê ano zero suedine e malha trabalhada - Marinho - M.PNG" />
+    <None Include="wwwroot\Images\019 - jardineira infantil jeans com babados e faixa - Azul médio - 3-6 meses.PNG" />
+    <None Include="wwwroot\Images\020 - jardineira infantil jeans com cinto - Azul médio - 18-24 meses.PNG" />
+    <None Include="wwwroot\Images\camisaflorida.jpg" />
+    <None Include="wwwroot\Images\camisetatoystory.jpg" />
+    <None Include="wwwroot\Images\fashioncoders-logo.png" />
+    <None Include="wwwroot\Images\regatafeminina.jpg" />
   </ItemGroup>
 
 </Project>

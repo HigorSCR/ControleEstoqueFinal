@@ -1,0 +1,69 @@
+﻿@page
+@model ControleEstoqueW.Pages.Produtos.BaixaEstoqueModel
+@{ }
+
+<h1>Baixa de Estoque</h1>
+<hr />
+
+<form method="post">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header" style="background-color:#be2323;">
+                    <h3 class="card-title"><i class="nav-icon fas fa-arrow-alt-circle-down"></i> Informações do Produto</h3>
+                </div>
+                <div class="card-body">
+                    <p>Por favor informe o ID do produto abaixo.</p>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input class="form-control" type="text" asp-for="Produto.ID" />
+                        </div>
+                        <div class="col-md-5">
+                            <input type="submit" value="Pesquisar Produto" style="background-color:#be2323; border: 0px solid;" class="btn btn-primary float-left">
+                        </div>
+                    </div>
+
+                    <br />
+
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="card card-primary">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label asp-for="Produto.Descricao" class="control-label">Descrição</label>
+                                            <textarea asp-for="Produto.Descricao" readonly class="form-control" /></textarea>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label asp-for="Produto.Quantidade" class="control-label">Quantidade</label>
+                                            <input asp-for="Produto.Quantidade" class="form-control" />
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label asp-for="Produto.Categoria" class="control-label">Categoria</label>
+                                            <input asp-for="Produto.Categoria" id="categoria" name="categoria" class="form-control custom-select" readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="card card-secondary">
+                                <div class="card-body">
+                                    <div class="form-group">
+
+                                        <!--<input type="file" id="imagem" accept=".png, .jpg, .jpeg" name="imagem" class="form-control"> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Cancelar</a>
+                            <input type="submit" value="Salvar novo produto" class="btn btn-success float-right">
+                        </div>
+                    </div>
+</form>

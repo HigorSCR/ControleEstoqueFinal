@@ -31,11 +31,12 @@ namespace ControleEstoqueW.Pages.Produtos
                 if (response.IsSuccessStatusCode)
                 {
                     //Produtos/Index
-                    return RedirectToPage("./Create");
+                    return RedirectToPage("./Produtos/");
                 }
                 else
                 {
-                    return RedirectToPage("./Create");
+                    return RedirectToPage("./");
+
                 }
             }
         }

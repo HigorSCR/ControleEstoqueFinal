@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,9 +9,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 
-namespace ControleEstoqueW.Pages
+namespace ControleEstoqueW.Pages.Produtos
 {
-    public class IndexModel : PageModel
+    public class SaldoEstoqueModel : PageModel
     {
         public List<Produto> Produtos { get; private set; } = new List<Produto>();
         string baseUrl = "http://localhost:5000/";

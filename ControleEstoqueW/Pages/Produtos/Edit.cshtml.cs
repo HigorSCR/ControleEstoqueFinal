@@ -16,6 +16,7 @@ namespace ControleEstoqueW.Pages.Produtos
         [BindProperty]
         public Produto Produto { get; set; }
         string baseUrl = "http://localhost:5000/";
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -41,8 +42,7 @@ namespace ControleEstoqueW.Pages.Produtos
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
-        {
+        public async Task<IActionResult> OnPostAsync(){
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(baseUrl);
@@ -53,6 +53,7 @@ namespace ControleEstoqueW.Pages.Produtos
                     .PutAsJsonAsync("api/v1/Produto/" + Produto.ID, Produto);
                 if (response.IsSuccessStatusCode)
                 {
+
                     return RedirectToPage("./Index");
                 }
                 else
@@ -60,6 +61,6 @@ namespace ControleEstoqueW.Pages.Produtos
                     return Page();
                 }
             }
-        }
+        } 
     }
 }

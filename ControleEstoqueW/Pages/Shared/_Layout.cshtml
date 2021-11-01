@@ -42,16 +42,13 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-
-
         </nav>
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="@Url.Action("Index", "Home")" class="brand-link">
-
-                <span class="brand-text font-weight-light">Controle de Estoque</span>
+            <a asp-page="/Index" class="brand-link">
+                <span class="brand-text" style="padding-left: 3px; font-weight: 800;">Controle de Estoque</span>
             </a>
 
             <!-- Sidebar -->
@@ -65,15 +62,15 @@
                         <li class="nav-item menu-open">
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="@Url.Action("Index", "Home")" class="nav-link">
-                                        <i class="nav-icon fas fa-tshirt"></i>
+                                    <a asp-page="/Index" class="nav-link">
+                                        <i class="nav-icon fas fa-home"></i>
                                         <span>
-                                            <strong>Lista de Produtos</strong>
+                                            <strong>Início</strong>
                                         </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="@Url.Action("Cadastrar", "Produto")" class="nav-link">
+                                    <a asp-page="/Produtos/Create" class="nav-link">
                                         <i class="nav-icon fas fa-plus"></i>
                                         <span>
                                             <strong>Cadastrar Produto</strong>
@@ -86,16 +83,16 @@
                         <li class="nav-item menu-open">
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="@Url.Action("EntradaEstoque", "Operacoes")" class="nav-link">
-                                        <i class="nav-icon fas fa-box-open"></i>
+                                    <a asp-page="/Produtos/EntradaEstoque" class="nav-link">
+                                        <i class="nav-icon fas fa-dolly"></i>
                                         <span>
                                             <strong>Entrada de Estoque</strong>
                                         </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="@Url.Action("BaixaEstoque", "Operacoes")" class="nav-link">
-                                        <i class="nav-icon fas fa-undo"></i>
+                                    <a asp-page="/Produtos/BaixaEstoque" class="nav-link">
+                                        <i class="nav-icon fas fa-arrow-alt-circle-down"></i>
                                         <span>
                                             <strong>Baixa de Estoque</strong>
                                         </span>
@@ -107,23 +104,10 @@
                         <li class="nav-item menu-open">
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="@Url.Action("SaldoEstoque", "Relatorios")" class="nav-link">
-                                        <i class="nav-icon fas fa-tshirt"></i>
+                                    <a asp-page="/Produtos/SaldoEstoque" class="nav-link">
+                                        <i class="nav-icon fas fa-box-open"></i>
                                         <span>
                                             <strong>Saldo em Estoque</strong>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-header">Testes</li>
-                        <li class="nav-item menu-open">
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a asp-area="" asp-page="/Produtos/Index" class="nav-link">
-                                        <i class="nav-icon fas fa-tshirt"></i>
-                                        <span>
-                                            <strong>Poke</strong>
                                         </span>
                                     </a>
                                 </li>

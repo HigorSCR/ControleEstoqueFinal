@@ -1,39 +1,9 @@
 ﻿@page
-@model IndexModel
-@{ ViewData["Title"] = "Início"; }
+@model ControleEstoqueW.Pages.Produtos.SaldoEstoqueModel
+@{ }
+
 
 <div class="container">
-
-    <div class="row">
-        <div class="col-lg-6 col-6">
-
-            <div class="small-box bg-success">
-                <div class="inner">
-                    <h3>72 produtos</h3>
-
-                    <p>Total de produtos no estoque</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-bag"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6 col-6">
-
-            <div class="small-box bg-secondary">
-                <div class="inner">
-                    <h3>5<sup style="font-size: 20px"> Categorias</sup></h3>
-
-                    <p>Produtos em diferentes categorias</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     <div class="row">
         <div class="col-12">
@@ -53,6 +23,7 @@
                                 <th>Categoria</th>
                                 <th>Preço</th>
                                 <th>Quantidade</th>
+                                <th>Editar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,6 +36,11 @@
                     <td>@Html.DisplayFor(modelItem => data.Categoria)</td>
                     <td>@Html.DisplayFor(modelItem => data.Custo)</td>
                     <td>@Html.DisplayFor(modelItem => data.Quantidade)</td>
+                    <td>
+                        <a asp-page="/Produtos/Detail" asp-route-id="@data.ID" class="text-muted">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                    </td>
                 </tr>
 }
                         </tbody>
@@ -106,3 +82,52 @@
         </section> -->
 
 </div>
+
+<script>
+    //Traduzindo para Português Brasil
+    $('#tabelaProdutos').DataTable({
+        "language": {
+            "sProcessing": "Processando...",
+            "sLengthMenu": "Mostrar _MENU_ registros por vez.",
+            "sZeroRecords": "Nada encontrado.",
+            "sEmptyTable": "Ningún dato disponible en esta tabla",
+            "sInfo": "Mostrando de _START_ a _END_, total de _TOTAL_ registros.",
+            "sInfoEmpty": "Mostrando registros de 0 a 0 de um total de 0 registros.",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar produto:",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Carregando...",
+            "oPaginate": {
+                "sFirst": "Primeiro",
+                "sLast": "Último",
+                "sNext": "Seguinte",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending": ": Ative para ordenar de maneira ascendente",
+                "sSortDescending": ": Ative para ordenar de maneira descendente"
+            }
+        }
+    });
+
+</script>
+
+<!-- jQuery -->
+<script src="~/FrontEnd/plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="~/FrontEnd/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="~/FrontEnd/plugins/jszip/jszip.min.js"></script>
+<script src="~/FrontEnd/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="~/FrontEnd/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="~/FrontEnd/dist/js/adminlte.min.js"></script>
+

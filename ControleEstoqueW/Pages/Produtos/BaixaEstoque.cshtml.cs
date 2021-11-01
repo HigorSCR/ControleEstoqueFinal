@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,13 +9,15 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 
-namespace ControleEstoqueW.Pages
+namespace ControleEstoqueW.Pages.Produtos
 {
-    public class IndexModel : PageModel
+    public class BaixaEstoqueModel : PageModel
     {
-        public List<Produto> Produtos { get; private set; } = new List<Produto>();
+        [BindProperty]
+        public Produto Produto { get; set; }
+
         string baseUrl = "http://localhost:5000/";
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnPostAsync()
         {
             using (var client = new HttpClient())
             {
@@ -23,12 +25,18 @@ namespace ControleEstoqueW.Pages
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client
+                    .PostAsJsonAsync("api/v1/Produto", Produto);
 
-                HttpResponseMessage response = await client.GetAsync("api/v1/Produto");
                 if (response.IsSuccessStatusCode)
                 {
-                    string result = response.Content.ReadAsStringAsync().Result;
-                    Produtos = JsonConvert.DeserializeObject<List<Produto>>(result);
+                    //Produtos/Index
+                    return RedirectToPage("./Produtos/");
+                }
+                else
+                {
+                    return RedirectToPage("./");
+
                 }
             }
         }
