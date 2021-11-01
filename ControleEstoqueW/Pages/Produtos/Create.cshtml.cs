@@ -26,16 +26,16 @@ namespace ControleEstoqueW.Pages.Produtos
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client
-                    .PostAsJsonAsync("api/v1/Produto", Produto);
+                    .PostAsJsonAsync("api/v1/Produtos", Produto);
 
                 if (response.IsSuccessStatusCode)
                 {
                     //Produtos/Index
-                    return RedirectToPage("./Produtos/");
+                    return RedirectToPage("./EntradaEstoque");
                 }
                 else
                 {
-                    return RedirectToPage("./");
+                    return RedirectToPage("./Create");
 
                 }
             }

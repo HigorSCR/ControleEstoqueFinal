@@ -28,12 +28,10 @@
                                         <input asp-for="Produto.Status" class="form-control" />
 
                                         <label asp-for="Produto.Categoria" class="control-label">Categoria</label>
-                                        <select  asp-for="Produto.Categoria" id="categoria" name="categoria" class="form-control custom-select" required>
-                                            <option selected disabled>Selecione a Categoria</option>
-                                            <option value="Feminino">Feminino</option>
-                                            <option value="Masculino">Masculino</option>
-                                            <option value="Infantil">Infantil</option>
-                                        </select>
+                                        <input asp-for="Produto.Categoria" class="form-control" />
+                                        <!--<select asp-for="Produto.Categoria" asp-items="" id="categoria" name="categoria" class="form-control custom-select" required>
+                                            <option value="">Escolha uma opção</option>
+                                        </select> -->
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-md-4">
@@ -62,7 +60,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Cancelar</a>
+                            <a asp-page="/Index" class="btn btn-secondary">Cancelar</a>
                             <input type="submit" value="Salvar novo produto" class="btn btn-success float-right">
                         </div>
                     </div>

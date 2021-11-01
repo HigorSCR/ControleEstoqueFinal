@@ -30,7 +30,7 @@ namespace ControleEstoqueW.Pages.Produtos
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = await client.GetAsync("api/v1/Produto/" + id);
+                HttpResponseMessage response = await client.GetAsync("api/v1/Produtos/" + id);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -42,7 +42,8 @@ namespace ControleEstoqueW.Pages.Produtos
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(){
+        public async Task<IActionResult> OnPostAsync()
+        {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(baseUrl);
@@ -50,7 +51,7 @@ namespace ControleEstoqueW.Pages.Produtos
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client
-                    .PutAsJsonAsync("api/v1/Produto/" + Produto.ID, Produto);
+                    .PutAsJsonAsync("api/v1/Produtos/" + Produto.ID, Produto);
                 if (response.IsSuccessStatusCode)
                 {
 
@@ -61,6 +62,6 @@ namespace ControleEstoqueW.Pages.Produtos
                     return Page();
                 }
             }
-        } 
+        }
     }
 }

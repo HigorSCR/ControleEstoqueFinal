@@ -26,7 +26,7 @@ namespace ControleEstoqueW.Pages.Produtos
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client
-                    .PostAsJsonAsync("api/v1/Produto", Produto);
+                    .PostAsJsonAsync("api/v1/Produtos", Produto);
 
                 if (response.IsSuccessStatusCode)
                 {
