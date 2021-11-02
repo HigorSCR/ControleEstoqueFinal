@@ -8,6 +8,8 @@ using ControleEstoqueW.Models;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Web.Helpers;
+using Microsoft.Ajax.Utilities;
 
 namespace ControleEstoqueW.Pages.Produtos
 {
@@ -15,8 +17,37 @@ namespace ControleEstoqueW.Pages.Produtos
     {
         [BindProperty]
         public Produto Produto { get; set; }
-
         string baseUrl = "http://localhost:5000/";
+
+        public async Task<IActionResult> OnGetAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(baseUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync("api/v1/Produtos/" + id);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = response.Content.ReadAsStringAsync().Result;
+
+                    List<Produto> Produto_ = JsonConvert.DeserializeObject<List<Produto>>(result);
+                    Produto = Produto_.First();
+
+                }
+
+            }
+
+            return Page();
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
             using (var client = new HttpClient())
@@ -26,17 +57,15 @@ namespace ControleEstoqueW.Pages.Produtos
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client
-                    .PostAsJsonAsync("api/v1/Produtos", Produto);
-
+                    .PutAsJsonAsync("api/v1/Produtos/" + Produto.ID, Produto);
                 if (response.IsSuccessStatusCode)
                 {
-                    //Produtos/Index
-                    return RedirectToPage("./Produtos/");
+
+                    return RedirectToPage("./EntradaEstoque");
                 }
                 else
                 {
-                    return RedirectToPage("./");
-
+                    return Page();
                 }
             }
         }

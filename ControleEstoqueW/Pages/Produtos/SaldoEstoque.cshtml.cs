@@ -13,6 +13,7 @@ namespace ControleEstoqueW.Pages.Produtos
 {
     public class SaldoEstoqueModel : PageModel
     {
+        [BindProperty]
         public List<Produto> Produtos { get; private set; } = new List<Produto>();
         string baseUrl = "http://localhost:5000/";
         public async Task OnGetAsync()
