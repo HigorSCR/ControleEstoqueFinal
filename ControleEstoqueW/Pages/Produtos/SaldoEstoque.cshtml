@@ -1,7 +1,12 @@
 ﻿@page
 @model ControleEstoqueW.Pages.Produtos.SaldoEstoqueModel
 @{ }
-
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/FrontEnd/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/FrontEnd/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/FrontEnd/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Tema  -->
+    <link rel="stylesheet" href="~FrontEnd/dist/css/adminlte.min.css">
 
 <div class="container">
 
@@ -37,18 +42,17 @@
                     <td>@Html.DisplayFor(modelItem => data.Custo)</td>
                     <td>@Html.DisplayFor(modelItem => data.Quantidade)</td>
                     <td>
-                        <a asp-page="/Produtos/Edit" title="Editar produto" asp-route-id="@data.ID" class="text-muted">
+                        <a asp-page="/Produtos/Edit" title="Editar produto" asp-route-id="@data.ID" class="text-muted" style="padding: 0px 3px 0px 3px;">
                             <i class="fas fa-pen"></i>
                         </a>
-                        <a asp-page="/Produtos/EntradaEstoque" title="Realizar entrada no estoque" asp-route-id="@data.ID" class="text-muted">
-                            <i class="fas fa-plus"></i>
+                        <a asp-page="/Produtos/EntradaEstoque" title="Realizar entrada no estoque" asp-route-id="@data.ID" class="text-muted" style="padding: 0px 3px 0px 3px;">
+                            <i class="fas fa-plus-circle"></i>
                         </a>
-                        <a asp-page="/Produtos/BaixaEstoque" title="Realizar baixa no estoque" asp-route-id="@data.ID" class="text-muted">
-                            <i class="fas fa-minus"></i>
+                        <a asp-page="/Produtos/BaixaEstoque" title="Realizar baixa no estoque" asp-route-id="@data.ID" class="text-muted" style="padding: 0px 3px 0px 3px;">
+                            <i class="fas fa-minus-circle"></i>
                         </a>
                     </td>
-                </tr>
-}
+                </tr>}
                         </tbody>
 
                     </table>
@@ -89,6 +93,23 @@
 
 </div>
 
+<!-- jQuery -->
+<script src="~/FrontEnd/plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="~/FrontEnd/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="~/FrontEnd/plugins/jszip/jszip.min.js"></script>
+<script src="~/FrontEnd/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="~/FrontEnd/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="~/FrontEnd/dist/js/adminlte.min.js"></script>
+
 
 <script>
     //Traduzindo para Português Brasil
@@ -120,21 +141,4 @@
     });
 
 </script>
-
-<!-- jQuery -->
-<script src="~/FrontEnd/plugins/jquery/jquery.min.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="~/FrontEnd/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="~/FrontEnd/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="~/FrontEnd/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="~/FrontEnd/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="~/FrontEnd/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="~/FrontEnd/plugins/jszip/jszip.min.js"></script>
-<script src="~/FrontEnd/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="~/FrontEnd/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="~/FrontEnd/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<script src="~/FrontEnd/dist/js/adminlte.min.js"></script>
 

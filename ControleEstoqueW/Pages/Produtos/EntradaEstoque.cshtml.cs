@@ -36,6 +36,7 @@ namespace ControleEstoqueW.Pages.Produtos
 
                 if (response.IsSuccessStatusCode)
                 {
+
                     string result = response.Content.ReadAsStringAsync().Result;
 
                     List<Produto> Produto_ = JsonConvert.DeserializeObject<List<Produto>>(result);
@@ -61,7 +62,7 @@ namespace ControleEstoqueW.Pages.Produtos
                 if (response.IsSuccessStatusCode)
                 {
 
-                    return RedirectToPage("./EntradaEstoque");
+                    return RedirectToPage("./SaldoEstoque");
                 }
                 else
                 {

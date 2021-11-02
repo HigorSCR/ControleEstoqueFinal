@@ -14,8 +14,6 @@
                     <h3 class="card-title"><i class="nav-icon fas fa-arrow-alt-circle-down"></i> Informações do Produto</h3>
                 </div>
                 <div class="card-body">
-
-
                     <div class="row">
                         <div class="col-md-8">
                             <div class="card card-primary">
@@ -31,9 +29,13 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group col-md-6">
-                                            <label asp-for="Produto.Quantidade" class="control-label">Quantidade de Entrada</label>
-                                            <input asp-for="" id="quantidade" class="form-control" />
+                                        <div class="form-group col-md-3">
+                                            <label asp-for="Produto.Quantidade" class="control-label">Quantidade Atual</label>
+                                            <input asp-for="Produto.Quantidade" class="form-control" readonly />
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label class="control-label">Quantidade de Entrada</label>
+                                            <input name="quantidade" id="quantidade" class="form-control" />
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label asp-for="Produto.Categoria" class="control-label">Categoria</label>
@@ -56,8 +58,8 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Cancelar</a>
-                            <input type="submit" value="Adicionar ao Estoque" class="btn btn-success float-right">
+                            <input type="submit" value="Adicionar ao Estoque" style="margin-right: 20px; background-color: #007bff; border: 1px solid #007bff;" class="btn btn-success float-left">
+                            <a asp-page="/Produtos/SaldoEstoque" class="btn btn-secondary float-right">Cancelar</a>
                         </div>
                     </div>
                 </div>
@@ -66,6 +68,8 @@
     </div>
 </form>
 
-<script>
-    document.getElementById("quantidade").innerHTML=0;
+<script type="text/javascript" language="javascript">
+    function Func() {
+        alert("Teste")
+    }
 </script>
