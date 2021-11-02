@@ -37,8 +37,14 @@
                     <td>@Html.DisplayFor(modelItem => data.Custo)</td>
                     <td>@Html.DisplayFor(modelItem => data.Quantidade)</td>
                     <td>
-                        <a asp-page="/Produtos/Edit" asp-route-id="@data.ID" class="text-muted">
+                        <a asp-page="/Produtos/Edit" title="Editar produto" asp-route-id="@data.ID" class="text-muted">
                             <i class="fas fa-pen"></i>
+                        </a>
+                        <a asp-page="/Produtos/EntradaEstoque" title="Realizar entrada no estoque" asp-route-id="@data.ID" class="text-muted">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                        <a asp-page="/Produtos/BaixaEstoque" title="Realizar baixa no estoque" asp-route-id="@data.ID" class="text-muted">
+                            <i class="fas fa-minus"></i>
                         </a>
                     </td>
                 </tr>
@@ -82,6 +88,7 @@
         </section> -->
 
 </div>
+
 
 <script>
     //Traduzindo para Português Brasil

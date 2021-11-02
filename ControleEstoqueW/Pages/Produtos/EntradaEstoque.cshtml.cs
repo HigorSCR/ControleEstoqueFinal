@@ -48,7 +48,7 @@ namespace ControleEstoqueW.Pages.Produtos
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id, int? quantidade)
         {
             using (var client = new HttpClient())
             {
@@ -57,7 +57,7 @@ namespace ControleEstoqueW.Pages.Produtos
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client
-                    .PutAsJsonAsync("api/v1/Produtos/" + Produto.ID, Produto);
+                    .PutAsJsonAsync("api/v1/Produtos/" + id + "/valor=" + quantidade, Produto);
                 if (response.IsSuccessStatusCode)
                 {
 
