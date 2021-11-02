@@ -1,12 +1,12 @@
 ﻿@page
 @model ControleEstoqueW.Pages.Produtos.SaldoEstoqueModel
 @{ }
-    <!-- DataTables -->
-    <link rel="stylesheet" href="~/FrontEnd/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="~/FrontEnd/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="~/FrontEnd/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-    <!-- Tema  -->
-    <link rel="stylesheet" href="~FrontEnd/dist/css/adminlte.min.css">
+<!-- DataTables -->
+<link rel="stylesheet" href="~/FrontEnd/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="~/FrontEnd/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="~/FrontEnd/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+<!-- Tema  -->
+<link rel="stylesheet" href="~FrontEnd/dist/css/adminlte.min.css">
 
 <div class="container">
 
@@ -34,25 +34,29 @@
                         <tbody>
                             @foreach (var data in Model.Produtos)
                             {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => data.ID)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Imagem)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Descricao)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Categoria)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Custo)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Quantidade)</td>
-                    <td>
-                        <a asp-page="/Produtos/Edit" title="Editar produto" asp-route-id="@data.ID" class="text-muted" style="padding: 0px 3px 0px 3px;">
-                            <i class="fas fa-pen"></i>
-                        </a>
-                        <a asp-page="/Produtos/EntradaEstoque" title="Realizar entrada no estoque" asp-route-id="@data.ID" class="text-muted" style="padding: 0px 3px 0px 3px;">
-                            <i class="fas fa-plus-circle"></i>
-                        </a>
-                        <a asp-page="/Produtos/BaixaEstoque" title="Realizar baixa no estoque" asp-route-id="@data.ID" class="text-muted" style="padding: 0px 3px 0px 3px;">
-                            <i class="fas fa-minus-circle"></i>
-                        </a>
-                    </td>
-                </tr>}
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => data.ID)</td>
+                                    <td>
+                                        <img src="~/Images/@Html.DisplayFor(modelItem => data.Imagem)" class="img-circle img-size-32 mr-2"
+                                             alt="@Html.DisplayFor(modelItem => data.Imagem)" />
+                                    </td>
+                                    <td>@Html.DisplayFor(modelItem => data.Descricao)</td>
+                                    <td>@Html.DisplayFor(modelItem => data.Categoria)</td>
+                                    <td>@Html.DisplayFor(modelItem => data.Custo)</td>
+                                    <td>@Html.DisplayFor(modelItem => data.Quantidade)</td>
+                                    <td>
+                                        <a asp-page="/Produtos/Edit" title="Editar produto" asp-route-id="@data.ID" class="text-muted" style="padding: 0px 3px 0px 3px;">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        <a asp-page="/Produtos/EntradaEstoque" title="Realizar entrada no estoque" asp-route-id="@data.ID" class="text-muted" style="padding: 0px 3px 0px 3px;">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </a>
+                                        <a asp-page="/Produtos/BaixaEstoque" title="Realizar baixa no estoque" asp-route-id="@data.ID" class="text-muted" style="padding: 0px 3px 0px 3px;">
+                                            <i class="fas fa-minus-circle"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
 
                     </table>
@@ -141,4 +145,5 @@
     });
 
 </script>
+
 

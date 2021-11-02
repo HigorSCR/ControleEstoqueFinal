@@ -21,6 +21,7 @@ namespace ControleEstoqueW.Pages.Produtos
         {
             using (var client = new HttpClient())
             {
+
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
@@ -31,12 +32,11 @@ namespace ControleEstoqueW.Pages.Produtos
                 if (response.IsSuccessStatusCode)
                 {
                     //Produtos/Index
-                    return RedirectToPage("./EntradaEstoque");
+                    return RedirectToPage("./SucessoCadastro");
                 }
                 else
                 {
                     return RedirectToPage("./Create");
-
                 }
             }
         }

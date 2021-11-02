@@ -5,7 +5,7 @@
 <h1>Cadastrar Produto</h1>
 <hr />
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <div class="row">
         <input type="hidden" asp-for="Produto.ID" />
         <div class="col-md-12">
@@ -24,9 +24,7 @@
                             <div class="card card-primary">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label asp-for="Produto.Status" class="control-label">Status</label>
-                                        <input asp-for="Produto.Status" class="form-control" />
-
+                                        <input type="hidden" asp-for="Produto.Status" value="1" class="form-control" readonly />
                                         <label asp-for="Produto.Categoria" class="control-label">Categoria</label>
                                         <input asp-for="Produto.Categoria" class="form-control" />
                                         <!--<select asp-for="Produto.Categoria" asp-items="" id="categoria" name="categoria" class="form-control custom-select" required>
@@ -51,8 +49,9 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label asp-for="Produto.Imagem" class="control-label">Imagem</label>
+                                        <p>Selecione a imagem do produto:</p>
                                         <input asp-for="Produto.Imagem" class="form-control" />
-                                        <!--<input type="file" id="imagem" accept=".png, .jpg, .jpeg" name="imagem" class="form-control"> -->
+                                        <input type="file" id="imagem" src="" name="imagem" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -64,4 +63,8 @@
                             <input type="submit" value="Salvar novo produto" class="btn btn-success float-right">
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>

@@ -16,34 +16,58 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-lg-6 col-6">
+        <div class="col-lg-3 col-3">
 
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>72 produtos</h3>
+                    <h3>@Model.contador Produtos Cadastrados</h3>
 
-                    <p>Total de produtos no estoque</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-bag"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6 col-6">
-
-            <div class="small-box bg-secondary">
-                <div class="inner">
-                    <h3>5<sup style="font-size: 20px"> Categorias</sup></h3>
-
-                    <p>Produtos em diferentes categorias</p>
+                    <p>.</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-stats-bars"></i>
                 </div>
             </div>
         </div>
+        <div class="col-lg-3 col-3">
 
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>@Model.ContadorFeminino<sup style="font-size: 20px"> Feminino</sup></h3>
+
+                    <p>Categoria Feminino</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-3">
+
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>@Model.ContadorMasculino<sup style="font-size: 20px"> Masculino</sup></h3>
+
+                    <p>Categoria Masculino</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-3">
+
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>@Model.ContadorInfantil<sup style="font-size: 20px"> Infantil</sup></h3>
+
+                    <p>Categoria Infantil</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row">
@@ -62,7 +86,7 @@
                                 <th>Imagem</th>
                                 <th>Descrição do Produto</th>
                                 <th>Categoria</th>
-                                <th>Preço</th>
+                                <th>Preço(R$)</th>
                                 <th>Quantidade</th>
                             </tr>
                         </thead>
@@ -71,18 +95,68 @@
                             {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => data.ID)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Imagem)</td>
+                    <td>
+                        <img src="~/Images/@Html.DisplayFor(modelItem => data.Imagem)" class="img-circle img-size-32 mr-2"
+                             alt="@Html.DisplayFor(modelItem => data.Imagem)" />
+                    </td>
                     <td>@Html.DisplayFor(modelItem => data.Descricao)</td>
                     <td>@Html.DisplayFor(modelItem => data.Categoria)</td>
                     <td>@Html.DisplayFor(modelItem => data.Custo)</td>
                     <td>@Html.DisplayFor(modelItem => data.Quantidade)</td>
-                </tr>
-}
+                </tr>}
                         </tbody>
-
                     </table>
                 </div>
-
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Análise do Estoque</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="chart-responsive">
+                                <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                <canvas id="pieChart" height="134" width="268" style="display: block; width: 268px; height: 134px;" class="chartjs-render-monitor"></canvas>
+                            </div>
+                            <!-- ./chart-responsive -->
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer p-0">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Feminino
+                                <span class="float-right text-danger">
+                                    Qtde: @Model.ContadorFeminino
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Masculino
+                                <span class="float-right text-success">
+                                    Qtde: @Model.ContadorMasculino
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Infantil
+                                <span class="float-right text-warning">
+                                    Qtde: @Model.ContadorInfantil
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.footer -->
             </div>
 
         </div>
@@ -137,6 +211,9 @@
 <script src="~/FrontEnd/dist/js/adminlte.min.js"></script>
 
 <script>
+
+    //    alert(document.getElementById(#tabelaProdutos).rows[0].cells.lenght);
+
     //Traduzindo para Português Brasil
     $('#tabelaProdutos').DataTable({
         "language": {

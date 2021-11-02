@@ -60,7 +60,7 @@ namespace ControleEstoqueW.Pages.Produtos
                     .PutAsJsonAsync("api/v1/Produtos/" + id + "/valor=" + (-quantidade), Produto);
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToPage("./SaldoEstoque");
+                    return RedirectToPage("./SucessoEstoque");
                 }
                 else
                 {

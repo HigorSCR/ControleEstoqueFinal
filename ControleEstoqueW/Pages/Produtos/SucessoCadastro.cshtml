@@ -1,0 +1,26 @@
+﻿@page
+@model ControleEstoqueW.Pages.SucessoCadastroModel
+@{
+}
+
+<meta http-equiv="refresh" content="3; URL='/Produtos/SaldoEstoque'" />
+
+<div id="modals">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div align="center" class="modal-header" style="display: block; background-color: #1e3662; color: #fff; font-weight: 700; ">
+                Adição de Produto
+            </div>
+            <div class="modal-body" style="text-align:center;    display: block;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Produto adicionado ao Estoque com sucesso!<br />Clique em OK para voltar.</p>
+                    </div>
+                    <div class="col-md-12">
+                        <a asp-page="/Produtos/SaldoEstoque" class="btn btn-success">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
