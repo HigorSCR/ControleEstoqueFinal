@@ -1,3 +1,17 @@
 ﻿.main-sidebar {
     background-color: #1e3662;
 }
+
+.titulo-quadro {
+    font-size: 20px;
+}
+
+sup {
+    top: -0.2em;
+}
+
+@media all and (max-width: 600px) {
+    .titulo-quadro {
+        display: none;
+    }
+}

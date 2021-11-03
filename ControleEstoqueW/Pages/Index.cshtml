@@ -20,9 +20,9 @@
 
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>@Model.contador<sup style="font-size: 20px"> Geral</sup></h3>
+                    <h3>@Model.contador<sup class="titulo-quadro"> Geral</sup></h3>
 
-                    <p>Total</p>
+                    <p>Total Categorias</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-stats-bars"></i>
@@ -33,12 +33,12 @@
 
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>@Model.ContadorFeminino<sup style="font-size: 20px"> Feminino</sup></h3>
+                    <h3>@Model.ContadorFeminino<sup class="titulo-quadro"> Feminino</sup></h3>
 
                     <p>Categoria Feminino</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-bag"></i>
+                    <i class="ion ion-woman"></i>
                 </div>
             </div>
         </div>
@@ -46,12 +46,12 @@
 
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>@Model.ContadorMasculino<sup style="font-size: 20px"> Masculino</sup></h3>
+                    <h3>@Model.ContadorMasculino<sup class="titulo-quadro"> Masculino</sup></h3>
 
                     <p>Categoria Masculino</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
+                    <i class="ion ion-man"></i>
                 </div>
             </div>
         </div>
@@ -59,12 +59,12 @@
 
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>@Model.ContadorInfantil<sup style="font-size: 20px"> Infantil</sup></h3>
+                    <h3>@Model.ContadorInfantil<sup class="titulo-quadro"> Infantil</sup></h3>
 
                     <p>Categoria Infantil</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
+                    <i class="ion ion-ios-body"></i>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                         <h3 class="card-title">Produtos em estoque</h3>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <table id="tabelaProdutos" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -103,7 +103,8 @@
                     <td>@Html.DisplayFor(modelItem => data.Categoria)</td>
                     <td>@Html.DisplayFor(modelItem => data.Custo)</td>
                     <td>@Html.DisplayFor(modelItem => data.Quantidade)</td>
-                </tr>}
+                </tr>
+}
                         </tbody>
                     </table>
                 </div>
