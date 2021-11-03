@@ -17,6 +17,7 @@ namespace ControleEstoqueW.Pages.Produtos
     {
         [BindProperty]
         public Produto Produto { get; set; }
+        public string Imagem;
         string baseUrl = "http://localhost:5000/";
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -40,7 +41,7 @@ namespace ControleEstoqueW.Pages.Produtos
 
                     List<Produto> Produto_ = JsonConvert.DeserializeObject<List<Produto>>(result);
                     Produto = Produto_.First();
-
+                    Imagem = Produto.Imagem;
                 }
 
             }

@@ -1,9 +1,6 @@
 ﻿@page
 @model ControleEstoqueW.Pages.Produtos.CreateModel
-@{ }
-
-<h1>Cadastrar Produto</h1>
-<hr />
+@{ViewBag.Title = "Cadastro de Produto"; }
 
 <form method="post" enctype="multipart/form-data">
     <div class="row">
@@ -11,26 +8,38 @@
         <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title"><i class="nav-icon fas fa-pen"></i> Informações do Produto</h3>
+                    <h3 class="card-    title"><i class="nav-icon fas fa-pen"></i> Informações do Produto</h3>
                 </div>
                 <div class="card-body">
                     <p>Por favor complete com as informações abaixo para cadastrar um novo produto.</p>
-                    <div class="form-group">
-                        <label asp-for="Produto.Descricao" class="control-label">Descrição</label>
-                        <input asp-for="Produto.Descricao" class="form-control" />
-                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card card-primary">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <input type="hidden" asp-for="Produto.Status" value="1" class="form-control" readonly />
-                                        <label asp-for="Produto.Categoria" class="control-label">Categoria</label>
-                                        <input asp-for="Produto.Categoria" class="form-control" />
-                                        <!--<select asp-for="Produto.Categoria" asp-items="" id="categoria" name="categoria" class="form-control custom-select" required>
-                                            <option value="">Escolha uma opção</option>
-                                        </select> -->
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <input type="hidden" asp-for="Produto.Status" class="form-control" />
+                                                <label asp-for="Produto.Descricao" class="control-label">Descrição</label>
+                                                <input asp-for="Produto.Descricao" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label asp-for="Produto.Categoria" class="control-label">Categoria</label>
+                                                <input asp-for="Produto.Categoria" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <!-- <select asp-for="Produto.Categoria" id="categoria" name="categoria" class="form-control custom-select" required>
+                <option value="">Escolha uma opção</option>
+            </select>-->
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-secondary">
+                                <div class="card-body">
                                     <div class="row">
                                         <div class="form-group col-md-4">
                                             <label asp-for="Produto.Quantidade" class="control-label">Quantidade</label>
@@ -41,17 +50,11 @@
                                             <input asp-for="Produto.Custo" class="form-control" />
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card card-secondary">
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label asp-for="Produto.Imagem" class="control-label">Imagem</label>
-                                        <p>Selecione a imagem do produto:</p>
-                                        <input asp-for="Produto.Imagem" class="form-control" />
-                                        <input type="file" id="imagem" src="" name="imagem" class="form-control">
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label asp-for="Produto.Imagem" class="control-label">Nome da Imagem</label>
+                                            <input asp-for="Produto.Imagem" class="form-control" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

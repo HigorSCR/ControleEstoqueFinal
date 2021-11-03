@@ -1,9 +1,6 @@
 ﻿@page
 @model ControleEstoqueW.Pages.Produtos.EditModel
-@{ }
-
-<h1 class="text-center">Editar Produto</h1>
-<hr />
+@{ViewBag.Title = "Editar Produto"; }
 
 <form method="post">
     <div class="row">
@@ -15,20 +12,24 @@
                 </div>
                 <div class="card-body">
                     <p>Por favor complete com as informações abaixo para cadastrar um novo produto.</p>
-                    <div class="form-group">
-                        <label asp-for="Produto.Descricao" class="control-label">Descrição</label>
-                        <input asp-for="Produto.Descricao" class="form-control" />
-                    </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="card card-primary">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label asp-for="Produto.Status" class="control-label">Status</label>
-                                        <input asp-for="Produto.Status" class="form-control" />
-
-                                        <label asp-for="Produto.Categoria" class="control-label">Categoria</label>
-                                        <input asp-for="Produto.Categoria" class="form-control" />
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <input type="hidden" asp-for="Produto.Status" class="form-control" />
+                                                <label asp-for="Produto.Descricao" class="control-label">Descrição</label>
+                                                <input asp-for="Produto.Descricao" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label asp-for="Produto.Categoria" class="control-label">Categoria</label>
+                                                <input asp-for="Produto.Categoria" class="form-control" />
+                                            </div>
+                                        </div>
                                         <!-- <select asp-for="Produto.Categoria" id="categoria" name="categoria" class="form-control custom-select" required>
                                             <option value="">Escolha uma opção</option>
                                         </select>-->
@@ -46,12 +47,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="card card-secondary">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label asp-for="Produto.Imagem" class="control-label">Imagem</label>
+                                        <label asp-for="Produto.Imagem" class="control-label">Endereço da Imagem</label>
                                         <input asp-for="Produto.Imagem" class="form-control" />
+                                        <hr />
+                                        <img src="~/Images/@Model.Imagem" class="img-thumbnail" style="max-height:160px;" />
                                         <!--<input type="file" id="imagem" accept=".png, .jpg, .jpeg" name="imagem" class="form-control"> -->
                                     </div>
                                 </div>
@@ -61,7 +64,7 @@
                     <div class="row">
                         <div class="col-12">
                             <a asp-page="/Index" class="btn btn-secondary">Cancelar</a>
-                            <input type="submit" value="Salvar novo produto" class="btn btn-success float-right">
+                            <input type="submit" value="Editar produto" class="btn btn-success float-right">
                         </div>
                     </div>
                 </div>

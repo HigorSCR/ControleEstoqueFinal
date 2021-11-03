@@ -20,9 +20,9 @@
 
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>@Model.contador Produtos Cadastrados</h3>
+                    <h3>@Model.contador<sup style="font-size: 20px"> Geral</sup></h3>
 
-                    <p>.</p>
+                    <p>Total</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-stats-bars"></i>
@@ -99,7 +99,7 @@
                         <img src="~/Images/@Html.DisplayFor(modelItem => data.Imagem)" class="img-circle img-size-32 mr-2"
                              alt="@Html.DisplayFor(modelItem => data.Imagem)" />
                     </td>
-                    <td>@Html.DisplayFor(modelItem => data.Descricao)</td>
+                    <td style="text-transform: capitalize;">@Html.DisplayFor(modelItem => data.Descricao)</td>
                     <td>@Html.DisplayFor(modelItem => data.Categoria)</td>
                     <td>@Html.DisplayFor(modelItem => data.Custo)</td>
                     <td>@Html.DisplayFor(modelItem => data.Quantidade)</td>
@@ -109,58 +109,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Análise do Estoque</h3>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="chart-responsive">
-                                <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                <canvas id="pieChart" height="134" width="268" style="display: block; width: 268px; height: 134px;" class="chartjs-render-monitor"></canvas>
-                            </div>
-                            <!-- ./chart-responsive -->
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer p-0">
-                    <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Feminino
-                                <span class="float-right text-danger">
-                                    Qtde: @Model.ContadorFeminino
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Masculino
-                                <span class="float-right text-success">
-                                    Qtde: @Model.ContadorMasculino
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Infantil
-                                <span class="float-right text-warning">
-                                    Qtde: @Model.ContadorInfantil
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.footer -->
-            </div>
-
-        </div>
-
     </div>
 
     <!--  <h1 class="text-center">

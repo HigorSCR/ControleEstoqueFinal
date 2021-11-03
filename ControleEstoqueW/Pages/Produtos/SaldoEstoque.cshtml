@@ -1,6 +1,7 @@
 ﻿@page
 @model ControleEstoqueW.Pages.Produtos.SaldoEstoqueModel
-@{ }
+@{ViewBag.Title = "Saldo de Estoque"; }
+
 <!-- DataTables -->
 <link rel="stylesheet" href="~/FrontEnd/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="~/FrontEnd/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -40,7 +41,7 @@
                                         <img src="~/Images/@Html.DisplayFor(modelItem => data.Imagem)" class="img-circle img-size-32 mr-2"
                                              alt="@Html.DisplayFor(modelItem => data.Imagem)" />
                                     </td>
-                                    <td>@Html.DisplayFor(modelItem => data.Descricao)</td>
+                                    <td style="text-transform: capitalize;">@Html.DisplayFor(modelItem => data.Descricao)</td>
                                     <td>@Html.DisplayFor(modelItem => data.Categoria)</td>
                                     <td>@Html.DisplayFor(modelItem => data.Custo)</td>
                                     <td>@Html.DisplayFor(modelItem => data.Quantidade)</td>
@@ -82,7 +83,7 @@
                     <div class="pokemon-info">
                         <h2>Id: @Html.DisplayFor(modelItem => data.ID)</h2>
                         <h3>Status: @Html.DisplayFor(modelItem => data.Status)</h3>
-                        <h3>Descrição: @Html.DisplayFor(modelItem => data.Descricao)</h3>
+                        <h3 >Descrição: @Html.DisplayFor(modelItem => data.Descricao)</h3>
                         <h3>Categoria: @Html.DisplayFor(modelItem => data.Categoria)</h3>
                         <h3>Quantidade: @Html.DisplayFor(modelItem => data.Quantidade)</h3>
                         <h3>Custo: @Html.DisplayFor(modelItem => data.Custo)</h3>
